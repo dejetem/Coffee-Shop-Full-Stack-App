@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-AUTH0_DOMAIN = os.getenv('ALGORITHMS')
-ALGORITHMS = os.getenv('ALGORITHMS')
-API_AUDIENCE = os.getenv('API_AUDIENCE')
+AUTH0_DOMAIN = 'udacityfullstack.eu.auth0.com'
+ALGORITHMS = ['RS256']
+API_AUDIENCE = 'http://127.0.0.1:5000/'
 
 ## AuthError Exception
 '''
@@ -76,9 +76,9 @@ def check_permissions(permission, payload):
 
     if permission not in payload['permissions']:
         raise AuthError({
-            'code': 'unauthorized',
+            'code': 'forbidden',
             'description': 'Permission Not Missing',
-        }, 401)
+        }, 403)
     return True
     #raise Exception('Not Implemented')
 

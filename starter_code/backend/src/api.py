@@ -219,6 +219,14 @@ def unauthorized(error):
         "message": 'Unathorized'
     }), 401
 
+@app.errorhandler(403)
+def forbidden(error):
+    return jsonify({
+        "success": False,
+        "error": 403,
+        "message": 'Unathorized, permission is not present'
+    }), 403
+
 @app.errorhandler(405)
 def method_not_allowed(error):
     return jsonify({
