@@ -9,9 +9,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-AUTH0_DOMAIN = 'udacityfullstack.eu.auth0.com'
-ALGORITHMS = ['RS256']
-API_AUDIENCE = 'http://127.0.0.1:5000/'
+AUTH0_DOMAIN = os.getenv('AUTH0_DOMAIN')
+ALGORITHMS = os.getenv('AUTH0_DOMAIN')
+API_AUDIENCE = os.getenv('API_AUDIENCE')
+
 
 ## AuthError Exception
 '''
